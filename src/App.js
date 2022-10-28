@@ -1,14 +1,11 @@
 import React, {useState} from "react";
-import "./App.css"
-import Navbar from './Components/Navbar/Navbar'
-import { ComponenteBoton } from './ComponenteBoton'
-import { ComponenteTitulo } from './ComponenteTitulo'
-import { CartWidget } from "./Components/Navbar/CartWidget/CartWidget";
-import { ItemListContainer } from "./Components/Navbar/ItemListContainer/ItemListContainer";
-import { ItemCount } from './ItemCount';
+import "./App.css";
+import Navbar from './Components/Navbar/Navbar';
+import { ItemListContainer } from "./Components/Containers/ItemListContainer/ItemListContainer";
+import { ItemCountB } from './Components/ItemCount/ItemCountB';
 import { Usuarios } from './Usuarios';
-import {Item} from './Components/Navbar/Item/Item';
-import {ItemList} from "./Components/Navbar/ItemList/ItemList";
+import { ItemDetailContainer } from './Components/Containers/ItemDetailContainer/ItemDetailContainer';
+import { Cart } from "./Components/Containers/CartView/Cart";
 import { BrowserRouter,Routes, Route} from "react-router-dom";
 
 const App = () => {
@@ -26,17 +23,18 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-      <Navbar nombreUno={nombre}>
-        <ComponenteBoton/>
-        <ComponenteTitulo/>
-        <CartWidget/>      
-      </Navbar>
-      <ItemListContainer greeting={mensaje}/>
-      {show ? <ItemCount stock={5} initial={1} onAdd={onAdd} /> : <h1>No hay nada!!!</h1>}
-      <Usuarios />
-      <button onClick={alternar}>Alternar</button>
-      <Item />
-      <ItemList/>
+        <Navbar nombreUno={nombre} />         
+        <Routes>
+          <Route path="/" element={<ItemListContainer greeting={mensaje}/>}/>
+          <Route path="/categoria/:id" element={<ItemListContainer greeting={mensaje}/>}/>
+          <Route path="/producto/:id" element={<ItemDetailContainer />}/>
+          <Route path="/cart" element={<Cart estilo={false} color={'blue'} />}/>
+          <Route path="*" element={<ItemListContainer />}/>
+        </Routes>
+        {show ? <ItemCountB stock={5} initial={1} onAdd={onAdd} /> : <h1>No hay nada!!!</h1>}
+        <Usuarios />
+        <button onClick={alternar}>Alternar</button>
+          
       </BrowserRouter>
     </>
   );

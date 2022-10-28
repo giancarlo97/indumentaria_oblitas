@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
 
 export const Usuarios = () => {
-    const [usuarios, setUsuarios] = useState([{nombre:'Nicolas'},{nombre:'Pepe'}]);
+    const [usuarios, setUsuarios] = useState([
+        {nombre:'Nicolas'},
+        {nombre:'Pepe'}
+    ]);
 
     const [nombre, setNombre] = useState("");
 

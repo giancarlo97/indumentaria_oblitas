@@ -28,8 +28,8 @@ export const ItemCount = (stock, initial, onAdd) => {
 
     const handlerClickReset = ()=>{
         setContador(1);
-        onAdd();
     }
+    
   return (
     <div>
         <h1>Componente para los estados</h1>
@@ -39,5 +39,5 @@ export const ItemCount = (stock, initial, onAdd) => {
         <button onClick={handlerClickRestar}>Restar</button>
         <button onClick={handlerClickReset}>Reset</button>
     </div>
-  )
-}
+  );
+};
