@@ -19,7 +19,6 @@ export const ItemListContainer = ({ greeting }) => {
                 const productos = data.map(item => {
                   return {...item, stock:Math.floor(Math.random() * 50)}
                 });
-                //console.log(data);
                 setProducts(productos);
             } catch{
                 console.log("error");

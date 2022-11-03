@@ -1,6 +1,9 @@
 import React, { useState, useContext } from "react";
-import ItemCount from "../../Components/ItemCount/ItemCount";
+import ItemCountB from "../../ItemCount/ItemCountB";
+//../../Components/ItemCount/ItemCount
 import { Link } from "react-router-dom";
+import { Context } from "../../Context/CustomContext";
+
 
 const ItemDetail = ({product}) => {
   const [isPressedButton, setIsPressedButton] = useState(false);
@@ -26,7 +29,7 @@ const ItemDetail = ({product}) => {
         <span>{product.description}</span>
         <h2>{product.price}</h2>
         {!isPressedButton ? (
-        <ItemCount stock={stock} initial={1} onAdd={onAdd} />
+        <ItemCountB stock={stock} initial={1} onAdd={onAdd} />
       ) : (
         <Link to="/cart">
           <button>Finalizar Compra</button>

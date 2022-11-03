@@ -7,6 +7,9 @@ import { Usuarios } from './Usuarios';
 import { ItemDetailContainer } from './Components/Containers/ItemDetailContainer/ItemDetailContainer';
 import { Cart } from "./Components/Containers/CartView/Cart";
 import { BrowserRouter,Routes, Route} from "react-router-dom";
+import { ComponenteEventos } from "./ComponenteEventos";
+import { Users } from "./Users";
+import { CustomProvider } from "./Context/CustomContext";
 
 const App = () => {
   const nombre = "Morph";
@@ -23,6 +26,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
+      <CustomProvider>
         <Navbar nombreUno={nombre} />         
         <Routes>
           <Route path="/" element={<ItemListContainer greeting={mensaje}/>}/>
@@ -34,6 +38,11 @@ const App = () => {
         {show ? <ItemCountB stock={5} initial={1} onAdd={onAdd} /> : <h1>No hay nada!!!</h1>}
         <Usuarios />
         <button onClick={alternar}>Alternar</button>
+
+        <ComponenteEventos />
+        <Users />
+
+        </CustomProvider>
           
       </BrowserRouter>
     </>
