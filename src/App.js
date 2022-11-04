@@ -10,6 +10,8 @@ import { BrowserRouter,Routes, Route} from "react-router-dom";
 import { ComponenteEventos } from "./ComponenteEventos";
 import { Users } from "./Users";
 import { CustomProvider } from "./Context/CustomContext";
+import { Header } from "./Header";
+import { ComponenteMemo } from "./ComponenteMemo"; 
 
 const App = () => {
   const nombre = "Morph";
@@ -21,6 +23,14 @@ const App = () => {
 
   const alternar = ()=>{
     setShow(!show);
+  }
+
+  const mensaje2 ="Las majores ofertas";
+
+  const [numero, setNumero] = useState(0);
+
+  const cambiar = ()=>{
+    setNumero(numero+1);
   }
 
   return (
@@ -41,6 +51,9 @@ const App = () => {
 
         <ComponenteEventos />
         <Users />
+
+        <Header />
+        <ComponenteMemo cambiar={cambiar}/>
 
         </CustomProvider>
           
