@@ -9,8 +9,8 @@ export const Cart = ({ estilo, color }) => {
   const { cart, total, clear } = useContext(Context);
 
   const comprador = {
-    nombre: 'Gaston',
-    apellido: 'Rodri',
+    nombre: 'Maxi',
+    apellido: 'Pepe',
     email: 'tonga@tonga.com'
   };
 
@@ -34,7 +34,7 @@ export const Cart = ({ estilo, color }) => {
   }
 
   const actualizarStock = ()=>{
-    const updateStock = doc(db, "productos","KwnjSlyDslt1IneySzVr")
+    const updateStock = doc(db, "productos","qBxBQN1Eu1DeWeA98ozT")
     updateDoc(updateStock,{stock:100})
   }
 
