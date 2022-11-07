@@ -7,11 +7,8 @@ import { Usuarios } from './Usuarios';
 import { ItemDetailContainer } from './Components/Containers/ItemDetailContainer/ItemDetailContainer';
 import { Cart } from "./Components/Containers/CartView/Cart";
 import { BrowserRouter,Routes, Route} from "react-router-dom";
-import { ComponenteEventos } from "./ComponenteEventos";
-import { Users } from "./Users";
 import { CustomProvider } from "./Context/CustomContext";
-import { Header } from "./Header";
-import { ComponenteMemo } from "./ComponenteMemo"; 
+
 
 const App = () => {
   const nombre = "Morph";
@@ -48,12 +45,6 @@ const App = () => {
         {show ? <ItemCountB stock={5} initial={1} onAdd={onAdd} /> : <h1>No hay nada!!!</h1>}
         <Usuarios />
         <button onClick={alternar}>Alternar</button>
-
-        <ComponenteEventos />
-        <Users />
-
-        <Header />
-        <ComponenteMemo cambiar={cambiar}/>
 
         </CustomProvider>
           

@@ -8,7 +8,7 @@ export const UserList = ({ lista, funcionDelete }) => {
         return (
           <li>
             <h2 key={i}>{usuario.nombre}</h2>
-            <button onClick={()=>funcionDelete(usuario.id)}>Eliminar usuario</button>
+            <button onClick={() => funcionDelete(usuario.id)}>Eliminar usuario</button>
           </li>
         );
       })}

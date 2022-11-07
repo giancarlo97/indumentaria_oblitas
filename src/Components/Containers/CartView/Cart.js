@@ -14,28 +14,28 @@ export const Cart = ({ estilo, color }) => {
     email: 'tonga@tonga.com'
   };
 
-  const finalizarCompra = ()=>{
-    const ventasCollection = collection(db,"ventas");
-    addDoc(ventasCollection,{
+  const finalizarCompra = () => {
+    const ventasCollection = collection(db, "ventas");
+    addDoc(ventasCollection, {
       comprador,
-      items:[{nombre:'banana'},{nombre:'pera'}],
+      items: [{ nombre: 'banana' }, { nombre: 'pera' }],
       total: 200,
-      date:serverTimestamp()
+      date: serverTimestamp()
     })
-    .then(result=>{
-      console.log(result.id);
-    })
-    .catch(e => {
-      console.log('todo mal');
-      console.log(e);
-    });
-    
+      .then(result => {
+        console.log(result.id);
+      })
+      .catch(e => {
+        console.log('todo mal');
+        console.log(e);
+      });
+
     clear();
   }
 
-  const actualizarStock = ()=>{
-    const updateStock = doc(db, "productos","qBxBQN1Eu1DeWeA98ozT")
-    updateDoc(updateStock,{stock:100})
+  const actualizarStock = () => {
+    const updateStock = doc(db, "productos", "qBxBQN1Eu1DeWeA98ozT")
+    updateDoc(updateStock, { stock: 100 })
   }
 
 

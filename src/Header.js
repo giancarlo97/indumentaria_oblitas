@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const Header = () => {
-    console.log("Log desde el Header");
+  console.log("Log desde el Header");
   return (
     <div>Header</div>
   )
