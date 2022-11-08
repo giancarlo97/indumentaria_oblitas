@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { Context } from "../../Context/CustomContext";
+import { Context } from "../../../Context/CustomContext";
 import { Link } from "react-router-dom";
 import "./Cart.css";
-import { db } from "../../firebase/firebase";
+import { db } from "../../../firebase/firebase";
 import { collection, addDoc, serverTimestamp, doc, updateDoc } from "firebase/firestore"
 
 export const Cart = ({ estilo, color }) => {

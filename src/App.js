@@ -2,13 +2,10 @@ import React, {useState} from "react";
 import "./App.css";
 import Navbar from './Components/Navbar/Navbar';
 import { ItemListContainer } from "./Components/Containers/ItemListContainer/ItemListContainer";
-import { ItemCountB } from './Components/ItemCount/ItemCountB';
-import { Usuarios } from './Usuarios';
 import { ItemDetailContainer } from './Components/Containers/ItemDetailContainer/ItemDetailContainer';
 import { Cart } from "./Components/Containers/CartView/Cart";
 import { BrowserRouter,Routes, Route} from "react-router-dom";
 import { CustomProvider } from "./Context/CustomContext";
-
 
 const App = () => {
   const nombre = "Morph";
@@ -42,9 +39,6 @@ const App = () => {
           <Route path="/cart" element={<Cart estilo={false} color={'blue'} />}/>
           <Route path="*" element={<ItemListContainer />}/>
         </Routes>
-        {show ? <ItemCountB stock={5} initial={1} onAdd={onAdd} /> : <h1>No hay nada!!!</h1>}
-        <Usuarios />
-        <button onClick={alternar}>Alternar</button>
 
         </CustomProvider>
           
