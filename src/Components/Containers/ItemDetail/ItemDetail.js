@@ -1,9 +1,7 @@
 import React, { useState, useContext } from "react";
 import ItemCountB from "../../ItemCount/ItemCountB";
-//../../Components/ItemCount/ItemCount
 import { Link } from "react-router-dom";
 import { Context } from "../../../Context/CustomContext";
-
 
 const ItemDetail = ({product}) => {
   const [isPressedButton, setIsPressedButton] = useState(false);

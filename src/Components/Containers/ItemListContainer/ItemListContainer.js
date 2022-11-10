@@ -31,27 +31,6 @@ export const ItemListContainer = ({ greeting }) => {
                 console.log(error);
             })
             .finally(setLoading(false));
-        /*const getProducts = async () => {
-            try{
-                const res = await fetch( id ? URL_CAT : URL_BASE);
-                const data = await res.json();
-                const productos = data.map(item => {
-                  return {...item, stock:Math.floor(Math.random() * 50)}
-                });
-                setProducts(productos);
-            } catch{
-                console.log("error");
-            } finally {
-                setLoading(false);
-            }
-        };
-        getProducts();*/
-        /*.then((res) => res.json())
-        .then((json) => setProductos(json))
-        .catch((error) => {
-            console.log(error);
-        })
-        .finally(setLoading(false));*/
     }, [id, URL_BASE, URL_CAT]);
 
     return (

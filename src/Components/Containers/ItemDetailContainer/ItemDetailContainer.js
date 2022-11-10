@@ -25,19 +25,6 @@ export const ItemDetailContainer = ({ greeting }) => {
         console.log(error);
       })
       .finally(setLoading(false));
-
-    /*const getProducts = async () => {
-      try {
-        const res = await fetch("https://fakestoreapi.com/products/" + id)
-        const data = await res.json();
-        setProduct(data);
-      } catch {
-        console.log("error");
-      } finally {
-        setLoading(false);
-      }
-    };
-    getProducts();*/
   }, [id]);
 
   return (

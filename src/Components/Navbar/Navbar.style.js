@@ -8,14 +8,14 @@ export const styles = {
         display: viewport.width > 900 ? "flex" : "none",
         alignItems: "center",
         justifyContent: "space-between",
-        height: 100,
+        height: 120,
         width: "100%",
     },
     imagenes: {
         height: "100%",
     },
     categorias: {
-        margin: 10,
+        margin: 15,
         color: 'red',
     },
 };

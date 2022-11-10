@@ -10,16 +10,12 @@ export const CustomProvider = ({ children }) => {
     useEffect(() => {
         setQty(cart.reduce((total, item) => total + item.cantidad, 0))
         setTotal(cart.reduce((total, item) => total + (item.cantidad * item.price), 0))
-    }, [])
+    }, []);
 
 
     const addItem = (item, cantidad) => {
         if (IsInCart(item.id)) {
-            /*const found = cart.find(producto => producto.id === item.id);
-            const index = cart.indexOf(found);
-            const aux = [...cart];
-            aux[index].cantidad += cantidad
-            setCart(aux);*/
+
             const modificado = cart.map((producto) => {
                 if (producto.id === item.id) {
                     producto.cantidad += cantidad;

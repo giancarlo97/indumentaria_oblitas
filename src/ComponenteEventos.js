@@ -2,7 +2,6 @@ import React from "react";
 
 export const ComponenteEventos = () => {
   const callback = (event) => {
-    //console.log(event.target);
     console.log("Click en el boton");
     event.stopPropagation();
   };

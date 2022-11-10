@@ -38,7 +38,6 @@ export const Cart = ({ estilo, color }) => {
     updateDoc(updateStock, { stock: 100 })
   }
 
-
   return (
     <>
       {cart.length === 0 ? (
@@ -55,7 +54,7 @@ export const Cart = ({ estilo, color }) => {
           ))}
         </>
       )}
-      <button onClick={actualizarStock}>finalizar compra</button>
+      <button onClick={actualizarStock && finalizarCompra}>finalizar compra</button>
     </>
   );
 };
