@@ -11,7 +11,7 @@ export const Cart = ({ estilo, color }) => {
   const comprador = {
     nombre: 'Maxi',
     apellido: 'Pepe',
-    email: 'tonga@tonga.com'
+    email: 'tonga@gmail.com'
   };
 
   const finalizarCompra = () => {
@@ -43,9 +43,9 @@ export const Cart = ({ estilo, color }) => {
       {cart.length === 0 ? (
         <>
           <h1 className={estilo ? "red" : "green"}>
-            No agregaste productos aun, puedes ir <Link to="/">ACA</Link>
+            Tu lista esta vacia <Link to="/">Llena el carrito</Link>
           </h1>
-          <h2 className={`tamanio ${color || ''}`}>Gracias por tu visita</h2>
+          <h2 className={`tamanio ${color || ''}`}>Gracias por visitarnos</h2>
         </>
       ) : (
         <>
@@ -54,7 +54,7 @@ export const Cart = ({ estilo, color }) => {
           ))}
         </>
       )}
-      <button onClick={actualizarStock && finalizarCompra}>finalizar compra</button>
+      <button onClick={actualizarStock && finalizarCompra}>Pagar</button>
     </>
   );
 };

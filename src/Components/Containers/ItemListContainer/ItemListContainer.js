@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import { db } from "../../../firebase/firebase";
 
-export const ItemListContainer = ({ greeting }) => {
+export const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -14,10 +14,11 @@ export const ItemListContainer = ({ greeting }) => {
     const URL_CAT = `${URL_BASE}/category/${id}`;
 
     const productCollection = collection(db, "productos");
-    const q = query(productCollection, where('category', '==', '7pJsEphDZwpUvcwVtWjD'))
+
+    const q = id ? query(productCollection, where('category', '==', id)) : productCollection;		
 
     useEffect(() => {
-        getDocs(productCollection)
+        getDocs(q)
             .then((result) => {
                 const listProducts = result.docs.map((item) => {
                     return {
@@ -35,7 +36,6 @@ export const ItemListContainer = ({ greeting }) => {
 
     return (
         <>
-            <h1>{greeting}</h1>
             {
                 <>
                     {loading ? <h1>Cargando...</h1> : <ItemList products={products} />}
@@ -44,3 +44,5 @@ export const ItemListContainer = ({ greeting }) => {
         </>
     );
 };
+
+export default ItemListContainer;

@@ -6,7 +6,7 @@ import { Link, NavLink } from "react-router-dom";
 import { ComponenteBoton } from '../../ComponenteBoton';
 import { ComponenteTitulo } from '../../ComponenteTitulo';
 
-export const Navbar = ({ nombreUno, nombreDos, children }) => {
+export const Navbar = () => {
 
   const categorias = [
     { nombre: "electronics", id: 0, ruta: "/categoria/electronics" },
@@ -20,7 +20,7 @@ export const Navbar = ({ nombreUno, nombreDos, children }) => {
       <Link style={styles.imagenes} to="/">
         <img style={styles.imagenes} src={logo2} alt="indumentaria S.A" />
       </Link>
-      <h1>{nombreUno}</h1>
+      
       <nav>
         {
           categorias.map((categoria) => {

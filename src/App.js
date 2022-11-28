@@ -7,8 +7,10 @@ import { Cart } from "./Components/Containers/CartView/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CustomProvider } from "./Context/CustomContext";
 import { Footer } from './Components/Footer/Footer';
+import { ComponenteBoton } from "./ComponenteBoton";
+import { ComponenteTitulo } from "./ComponenteTitulo";
+
 const App = () => {
-  const mensaje = "Realize su orden de compra";
 
   return (
     <>
@@ -16,15 +18,17 @@ const App = () => {
         <CustomProvider>
           <Navbar />
           <Routes>
-            <Route path="/" element={<ItemListContainer greeting={mensaje} />} />
-            <Route path="/categoria/:id" element={<ItemListContainer greeting={mensaje} />} />
+            <Route path="/" element={<ItemListContainer />} />
+            <Route path="/categoria/:id" element={<ItemListContainer />} />
             <Route path="/producto/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart estilo={false} color={'blue'} />} />
+            <Route path="/register" element={<ComponenteTitulo />} />
+            <Route path="/login" element={<ComponenteBoton />} />
             <Route path="*" element={<ItemListContainer />} />
           </Routes>
         </CustomProvider>  
-        <Footer />
       </BrowserRouter>
+      <Footer />
     </>
   );
 };
